@@ -1,31 +1,30 @@
-   function SalvarAnotacao(){
-    novaAnotacao = document.getElementById("anotacoes").value
-    novoTel = document.getElementById("tele").value
+   function SalvarContato() {
+    nome = document.getElementById("nome").value
+    telefone = document.getElementById("telefone").value
 
-    document.getElementById("anotacoes").valeu = ""
-    document.getElementById("tele").valeu = ""
+    novoContato = nome + " - " + telefone
+    document.getElementById("lista-Contato").innerHTML = novoContato
 
-    document.getElementById("anotacoes-salvas").innerHTML += "<p>" + novaAnotacao + " " + novoTel + "</p>"
-
-
-
-    document.getElementById("anotacoes").valeu = ""
-    document.getElementById("tele").valeu = ""
-
-    alert("Anotação salva com sucesso")
-
-
-localStorage.listaContatos =  novaAnotacao
+    localStorage.listaContatos = novoContato
 
 }
 
-document.getElementById("botao-salvar").addEventListener("click",function(){
-    SalvarAnotacao()
-  
-    
+btSalvar = document.getElementById("salvar")
+btSalvar.addEventListener("click", function () {
+    SalvarContato()
+
 })
 
-if(localStorage.listaContatos){
-document.getElementById("lista-Contatos").innerHTML = localStorage.
-listaContatos
-}
+if (localStorage.listaContatos)
+    document.getElementById("lista-Contato").innerHTML = localStorage.listaContatos
+
+
+    btLimpar = document.getElementById("limpar")
+    btLimpar.addEventListener("click", function () {
+        localStorage.clear()
+        document.getElementById("lista-contatos").innerHTML = "-"
+    })
+
+    function limpando() {
+        e.parentElement.remove();
+    }
