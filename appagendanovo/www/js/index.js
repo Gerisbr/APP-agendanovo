@@ -7,14 +7,25 @@
 
     document.getElementById("anotacoes-salvas").innerHTML += "<p>" + novaAnotacao + " " + novoTel + "</p>"
 
+
+
     document.getElementById("anotacoes").valeu = ""
     document.getElementById("tele").valeu = ""
 
     alert("Anotação salva com sucesso")
+
+
+localStorage.listaContatos =  novaAnotacao
+
 }
 
 document.getElementById("botao-salvar").addEventListener("click",function(){
     SalvarAnotacao()
-    navigator.vibrate(3000);
-    // navigator.vibrate([1000,1000,1000])
+  
+    
 })
+
+if(localStorage.listaContatos){
+document.getElementById("lista-Contatos").innerHTML = localStorage.
+listaContatos
+}
